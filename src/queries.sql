@@ -49,7 +49,7 @@ GROUP BY (packageCode);
 
 -- 7. Find all of those mechanics who have one or more maintenance items that they lacked
 --    one or more of the necessary skills.
-
+-- **** We might need to adjust the class diagram to perform this query.  We don't have maintenance items. ****
 
 -- 8. List the customers, sorted by the number of loyalty points that they have, from largest to
 --    smallest.
@@ -62,11 +62,14 @@ ORDER BY loyaltyPoints DESC;
 -- 9. List the premier customers and the difference between what they have paid in the past
 --    year, versus the services that they actually used during that same time. List from the
 --    customers with the largest difference to the smallest.
-
+SELECT customerID, firstName, lastName, ((CALCULATE MONTHKY FEE) * 12) AS "Monthly Fee", 
+(SELECT SUM(packageCost) FROM (SELECT DISTINCT customerID, ServiceTech, "DATE" FROM SERVICEVISIT NATURAL JOIN SERVICEPACKAGE)) AS "Total Cost"
+ORDER BY ("Monthly Fee" - "Total Cost") DESC;
 
 -- 10. Report on the steady customers based on the net profit that we have made from them
 --     over the past year, and the dollar amount of that profit, in order from the greatest to the
 --     least.
+
 
 -- 11. List the three premier customers who have paid Dave’s Automotive the greatest amount
 --     in the past year, and the sum of their payments over that period. Be sure to take into
@@ -86,6 +89,7 @@ SELECT titleOfSkill, COUNT(titleOfSkill)
 FROM
 
 -- 15. List the employees who are both service technicians as well as mechanics.
+-- **** This will return 0 results ****
 SELECT employeeID, firstName, lastName
 FROM PERSON INNER JOIN EMPLOYEE ON PERSON.personID=EMPLOYEE.employeeID
 WHERE title='Service Technician'
