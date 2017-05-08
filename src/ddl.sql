@@ -7,7 +7,9 @@ CREATE TABLE SERVICEITEM (
     "TIME" TIME,
     estimatedCost FLOAT,
     packageCode INT,
-    CONSTRAINT
+    CONSTRAINT svcItem_pk PRIMARY KEY (serviceCode),
+    CONSTRAINT skill_fk FOREIGN KEY (titleOfSkill) REFERENCES SKILL (titleOfSkill),
+    CONSTRAINT pkgCode_fk FOREIGN KEY (packageCode) REFERENCES SERVICEPACKAGE (packageCode)
 );
 
 CREATE TABLE SERVICEPACKAGE (
@@ -18,7 +20,7 @@ CREATE TABLE SERVICEPACKAGE (
 
 
 CREATE TABLE Vehicle (
-    personID INT NOT NULL,
+    customerID INT NOT NULL,
     vin varchar(16) NOT NULL,
     make varchar(20) NOT NULL,
     model varchar(20) NOT NULL,
@@ -27,7 +29,7 @@ CREATE TABLE Vehicle (
     mileageInterval INT NOT NULL,
     accident BOOLEAN NOT NULL,
 
-    CONSTRAINT person_fk FOREIGN KEY () REFERENCES customer (personID),
+    CONSTRAINT person_fk FOREIGN KEY (customerID) REFERENCES customer (personID),
     CONSTRAINT vehicle_pk PRIMARY KEY (personID, vin)
 );
 
