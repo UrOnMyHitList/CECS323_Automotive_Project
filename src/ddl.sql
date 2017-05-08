@@ -20,6 +20,9 @@ CREATE TABLE ZIP(
 );
 
 
+
+
+
 CREATE TABLE SERVICEPACKAGE (
     packageCode INT NOT NULL PRIMARY KEY,
     packageCost FLOAT
