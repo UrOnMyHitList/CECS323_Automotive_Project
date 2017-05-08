@@ -49,7 +49,7 @@ GROUP BY (packageCode);
 
 -- 7. Find all of those mechanics who have one or more maintenance items that they lacked
 --    one or more of the necessary skills.
--- **** We might need to adjust the class diagram to perform this query.  We don't have maintenance items. ****
+
 
 -- 8. List the customers, sorted by the number of loyalty points that they have, from largest to
 --    smallest.
