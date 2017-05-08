@@ -21,18 +21,29 @@ INSERT INTO PERSON( PERSONID, FIRSTNAME,  LASTNAME, EMAIL,  PHONENUMBER) VALUES
 ('C008', 'Rudy', 'Dennis', 'rudydennis@gmail.com', '410-555-0161'),
 ('C009', 'Leroy', 'Adams', 'leroyadams@gmail.com', '410-555-0151'),
 
----EMPLOYEES----
-('E011', 'Timmy', 'Price', 'timmyprice@gmail.com', '617-555-0183'),
-('E012', 'Trevor', 'Stone', 'trevorstone@gmail.com', '617-555-0126'),
-('E013', 'Michelle', 'Rodriguez', 'michellerodriguez@gmail.com', '617-555-0199'),
-('E014', 'Brendan', 'Sanchez', 'brendansanchez@gmail.com', '617-555-0151' ),
-('E015', 'Bill', 'Brock', 'billbrock@gmail.com', '617-555-0121'),
-('E016', 'Tyrone', 'Fitzgerald', 'tyronefitzgerald@gmail.com', '617-555-0100'),
-('E017', 'Steven', 'Figueroa', 'stevenfigueroa@gmail.com', '775-555-0170' ),
-('E018', 'Scott', 'Sandoval', 'scottsandoval@gmail.com','775-555-0139'),
-('E019','Mark', 'Horton', 'markhorton@gmail.com', '775-555-0129'),
-('E020', 'Otis', 'Jimenez', 'otisjimenez@gmail.com', '775-555-0195');
+---EMPLOYEES: MECHANIC----
+('M011', 'Timmy', 'Price', 'timmyprice@gmail.com', '617-555-0183'),
+('M012', 'Trevor', 'Stone', 'trevorstone@gmail.com', '617-555-0126'),
+('M013', 'Michelle', 'Rodriguez', 'michellerodriguez@gmail.com', '617-555-0199'),
+('M014', 'Brendan', 'Sanchez', 'brendansanchez@gmail.com', '617-555-0151' ),
+('M015', 'Bill', 'Brock', 'billbrock@gmail.com', '617-555-0121'),
+('M016', 'Tyrone', 'Fitzgerald', 'tyronefitzgerald@gmail.com', '617-555-0100'),
+('M017', 'Steven', 'Figueroa', 'stevenfigueroa@gmail.com', '775-555-0170' ),
+('M018', 'Scott', 'Sandoval', 'scottsandoval@gmail.com','775-555-0139'),
+('M019','Mark', 'Horton', 'markhorton@gmail.com', '775-555-0129'),
+('M020', 'Otis', 'Jimenez', 'otisjimenez@gmail.com', '775-555-0195');
 
+---EMPLOYEES: SERVICETECH----
+('S021', 'Theo', 'Miles', 'theomiles@gmail.com', '717-555-0149'),
+('S022', 'Fred', 'Cole', 'fredcole@gmail.com', '717-555-0130'),
+('S023', 'Ian', 'Morton', 'ianmorton@gmail.com', '717-555-0118'),
+('S024', 'Allan', 'Lloyd', 'allanlloyd@gmail.com', '717-555-0140' ),
+('S025', 'Darrell', 'Abbott', 'darrellabbott@gmail.com', '717-555-0141'),
+('S026', 'Derek', 'Wells', 'derekwells@gmail.com', '717-555-0108'),
+('S027', 'Cesar', 'Chandler', 'cesarchandler@gmail.com', '717-555-0138' ),
+('S028', 'Emanuel', 'Yates', 'emanuelyates@gmail.com','717-555-0138'),
+('S029','Daniel', 'Jones', 'danieljones@gmail.com', '717-555-0137'),
+('S030', 'Gordon', 'Owens', 'gordonowens@gmail.com', '717-555-0181');
 
 INSERT INTO CUSTOMER( CUSTOMERID, CUSTOMERTYPE, REFERREDBY, EMAIL, CUSTOMERLEVEL, TOTALSPENT) VALUES
 ('C000', 'individual', 'C001', 'catherinebeck@gmail.com', 'premier', 1200),
@@ -64,23 +75,42 @@ INSERT INTO PROSPECTIVE (CUSTOMERID, CONTACTATTEMPTS) VALUES
 ('C009', 3);
 
 INSERT INTO MECHANIC (EMPLOYEEID) VALUES
-('E011'),
-('E012'),
-('E013'),
-('E014'),
-('E015'),
-('E016'),
-('E017'),
-('E018'),
-('E019'),
-('E020');
+('M011'),
+('M012'),
+('M013'),
+('M014'),
+('M015'),
+('M016'),
+('M017'),
+('M018'),
+('M019'),
+('M020');
 
+INSERT INTO SERVICETECH (EMPLOYEEID) VALUES
+('S021'),
+('S022'),
+('S023'),
+('S024'),
+('S025'),
+('S026'),
+('S027'),
+('S028'),
+('S029'),
+('S030');
 
-
-
-
-
-
-
-
-
+INSERT INTO ZIP(ZIPNUMBER, CITY, "STATE")
+('90274', 'Redondo Beach', 'CA'), 
+('90275', 'Rancho Palos Verdes', 'CA'),
+('90280', 'South Gate', 'CA'),
+('90293', 'Playa Del Rey', 'CA'),
+('90294', 'Venice', 'CA'),
+('90401', 'Santa Monica', 'CA'),
+('90501', 'Torrance', 'CA'),
+('90801', 'Long Beach', 'CA'),
+('92037', 'La Jolla', 'CA'),
+('92658', 'Newport Beach', 'CA'),
+('92673', 'San Clemente', 'CA'),
+('92863', 'Orange', 'CA'),
+('92879', 'Corona', 'CA'),
+('93101', 'Santa Barbara', 'CA'),
+('92651', 'Laguna Beach', 'CA');
