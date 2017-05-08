@@ -8,6 +8,22 @@
  * Created: May 4, 2017
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- QUERIES
 -- 1. List the customers. For each customer, indicate which category he or she falls into, and
 --    his or her contact information. If you have more than one independent categorization of
