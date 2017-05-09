@@ -45,6 +45,8 @@ INSERT INTO PERSON( PERSONID, FIRSTNAME,  LASTNAME, EMAIL,  PHONENUMBER) VALUES
 ('S029','Daniel', 'Jones', 'danieljones@gmail.com', '717-555-0137'),
 ('S030', 'Gordon', 'Owens', 'gordonowens@gmail.com', '717-555-0181');
 
+
+--------UPDATE TOTAL SPENT--------
 INSERT INTO CUSTOMER( CUSTOMERID, CUSTOMERTYPE, REFERREDBY, EMAIL, CUSTOMERLEVEL, TOTALSPENT) VALUES
 ('C000', 'individual', 'C001', 'catherinebeck@gmail.com', 'premier', 1200),
 ('C001', 'individual', 'C002', 'jameserikson@gmail.com', 'premier', 1000),
@@ -114,3 +116,29 @@ INSERT INTO ZIP(ZIPNUMBER, CITY, "STATE")
 ('92879', 'Corona', 'CA'),
 ('93101', 'Santa Barbara', 'CA'),
 ('92651', 'Laguna Beach', 'CA');
+
+-------CHANGE PRICE ACCORDING TO SERVICE PACKAGE---------
+INSERT INTO SERVICEPACKAGE(PACKAGECODE, PACKAGECOST)
+('2K5H2', 200),
+('UGGZZ', 200),
+('ATZV3', 200),
+('YXZEY', 200),
+('KTZ0P', 200),
+('BW3ON', 200),
+('QG6B7', 200),
+('OSGWG', 200),
+('QHNNU', 200),
+('2U61E', 200),
+('III35', 200),
+('87T7T', 200),
+('QARZL', 200),
+('K6R32', 200),
+('KYMEV', 200),
+('5FSXX', 200),
+('4ZKBG', 200),
+('BJA16', 200),
+('VTNRE', 200);
+
+
+
+
