@@ -100,6 +100,31 @@ INSERT INTO MECHANIC (EMPLOYEEID) VALUES
 ('M019'),
 ('M020');
 
+INSERT INTO MASTERYLEVEL (EMPLOYEEID,TITLEOFSKILL, "LEVEL") VALUES
+('M011', 'change tires', 1),
+('M011', 'electrical', 1),
+('M012', 'oil change', 1),
+('M012', 'diagnosis', 2),
+('M012', 'electrical', 2),
+('M013', 'brake service', 2),
+('M013', 'diagnosis', 2),
+('M014', 'oil filter change', 2),
+('M014', 'suspension', 1),
+('M015', 'wheel alignment', 1),
+('M016', 'change tires', 2),
+('M016', 'suspension', 2),
+('M016', 'wheel alignment', 3),
+('M017', 'oil change', 3),
+('M017', 'wheel alignment', 3),
+('M017', 'tire pressure', 3),
+('M018', 'tire pressure', 1),
+('M019', 'engine check', 2),
+('M020', 'suspension', 3),
+('M020', 'change tires', 3)
+('M020', 'wheel alignment',3),
+('M020', 'engine check', 3),
+('M020', 'oil change', 3);
+
 INSERT INTO SERVICETECH (EMPLOYEEID) VALUES
 ('S021'),
 ('S022'),
