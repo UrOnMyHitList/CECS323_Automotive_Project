@@ -88,6 +88,39 @@ INSERT INTO VEHICLE(CUSTOMERID, VIN, ESTIMATEDMILEAGE, MILEAGEINTERVAL, ACCIDENT
 ('C008', '845CCC828288ALOLA', 68208, 23000, FALSE),
 ('C009', '929MAR10200CCKART', 34462, 12000, FALSE);
 
+INSERT INTO SERVICEINTERVAL(MAKE, MODEL, PACKAGECODE, MILEAGE)VALUES
+( 'ALFA ROMEO','Giulietta','P001', 10000 ),
+( 'ALFA ROMEO','Giulietta','P002', 20000 ),
+( 'ALFA ROMEO','Giulietta','P003', 30000 ),
+( 'AUDI','A3','P001',5000),
+( 'AUDI','A3','P001',10000),
+( 'BMW', 'X1','P002', 5000),
+( 'BMW', 'X1','P003', 1000),
+( 'BMW', 'X1','P004', 20000),
+( 'BMW', 'X1','P005', 30000),
+( 'BMW', 'X1','P006', 60000),
+( 'BMW', 'X1','P004', 120000),
+( 'CITROEN UK LTD','Grand C4 Picasso','P001', 15000),
+( 'CITROEN UK LTD','Grand C4 Picasso','P002', 30000),
+( 'CITROEN UK LTD','Grand C4 Picasso','P003', 50000),
+( 'FORD','Kuga','P002', 7000),
+( 'FORD','Kuga','P003', 15000),
+( 'FORD','Kuga','P004', 25000),
+( 'FORD','Kuga','P005', 50000),
+( 'HONDA','Jazz','P001', 10000),
+( 'HONDA','Jazz','P002', 25000),
+( 'HONDA','Jazz','P003', 40000),
+( 'MITSUBISHI','Outlander','P002', 30000),
+( 'MITSUBISHI','Outlander','P002', 60000),
+( 'MITSUBISHI','Outlander','P003', 120000),
+( 'SKODA','Yeti Outdoor','P004', 13000),
+( 'SsangYong Motor UK Ltd','Korando','P005', 10000),
+( 'SsangYong Motor UK Ltd','Korando','P004', 20000),
+( 'SsangYong Motor UK Ltd','Korando','P003', 30000),
+( 'SsangYong Motor UK Ltd','Korando','P002', 40000),
+( 'SUZUKI','Vitara','P005', 10000),
+( 'SUZUKI','Vitara','P002', 35000);
+
 INSERT INTO EMPLOYEE(employeeID, title, salary) VALUES
 ----MECHANIC----
 ('M011', 'MECHANIC', 34943),
