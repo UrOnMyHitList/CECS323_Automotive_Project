@@ -30,14 +30,11 @@ SELECT customerID, firstName, lastName, (SELECT packageCost FROM)
 -- 4. Find all of the mechanics who have three or more skills.
 SELECT employeeID, firstName, lastName, COUNT(titleOfSkill) AS "Number of Skills"
 FROM EMPLOYEE INNER JOIN PERSON ON EMPLOYEE.employeeID=PERSON.personID
-HAVING COUNT(titleOfSkill) >= 3;
+RIGHT OUTER JOIN SKILL EMPLOYEE.employeeID=SKILL.employeeID
+GROUP BY (employeeID) HAVING COUNT(titleOfSkill) >= 3;
 
 -- 5. Find all of the mechanics who have three or more skills in common.
-
-
 -- 5a. Please give the name of each of the two mechanics sharing 3 or more skills.
-
-
 -- 5b. Please make sure that any given pair of mechanics only shows up once.
 
 
@@ -62,7 +59,7 @@ ORDER BY loyaltyPoints DESC;
 -- 9. List the premier customers and the difference between what they have paid in the past
 --    year, versus the services that they actually used during that same time. List from the
 --    customers with the largest difference to the smallest.
-SELECT customerID, firstName, lastName, ((CALCULATE MONTHKY FEE) * 12) AS "Monthly Fee", 
+SELECT customerID, firstName, lastName, ((CALCULATE MONTHLY FEE) * 12) AS "Monthly Fee", 
 (SELECT SUM(packageCost) FROM (SELECT DISTINCT customerID, ServiceTech, "DATE" FROM SERVICEVISIT NATURAL JOIN SERVICEPACKAGE)) AS "Total Cost"
 ORDER BY ("Monthly Fee" - "Total Cost") DESC;
 
@@ -85,7 +82,7 @@ ORDER BY ("Monthly Fee" - "Total Cost") DESC;
 --     mechanic is passing along to the other mechanics.
 
 -- 14. Find the three skills that have the fewest mechanics who have those skills.
-SELECT titleOfSkill, COUNT(titleOfSkill)
+SELECT 3 titleOfSkill, COUNT(titleOfSkill)
 FROM
 
 -- 15. List the employees who are both service technicians as well as mechanics.

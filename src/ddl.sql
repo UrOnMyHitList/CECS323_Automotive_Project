@@ -180,14 +180,14 @@ CREATE TABLE SERVICEVISIT(
 );
 
 CREATE TABLE ServiceInterval (
-    personID VARCHAR(20) NULL,
+    personID VARCHAR(20) NOT NULL,
     vin varchar(16) NOT NULL,
     packageCode INT NOT NULL,
     "date" DATE NOT NULL,
 
-    CONSTRAINT personID_fk FOREIGN KEY () REFERENCES VEHICLE (personID),
-    CONSTRAINT vin_fk FOREIGN KEY () REFERENCES VEHICLE (vin),
-    CONSTRAINT packageCode_fk FOREIGN KEY () REFERENCES SERVICEPACKAGE (packageCode),
+    CONSTRAINT personID_fk FOREIGN KEY (personID) REFERENCES VEHICLE (personID),
+    CONSTRAINT vin_fk FOREIGN KEY (vin) REFERENCES VEHICLE (vin),
+    CONSTRAINT packageCode_fk FOREIGN KEY (packageCode) REFERENCES SERVICEPACKAGE (packageCode),
 
     CONSTRAINT ServiceInterval_pk PRIMARY KEY (personID, vin, packageCode,"date")
 );
