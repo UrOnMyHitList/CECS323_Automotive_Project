@@ -250,18 +250,13 @@ INSERT INTO APPOINTMENT(personID, vin, "DATE", "TIME") VALUES
 ('C005', '', '2017-06-03', '16:00'),
 ('C006', '', '2017-06-17', '13:00');
 
-INSERT INTO SERVICEVISIT(customerID, employeeID, "DATE", "TIME", serviceType) VALUES
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00'),
-('C', 'S', '2017--', '00:00');
+INSERT INTO SERVICEVISIT(customerID, employeeID, "DATE", "TIME", totalCost, packageCode) VALUES
+('C', 'S', '2017--', '00:00', 200, 1001),
+('C', 'S', '2017--', '00:00', 200, 1001),
+('C', 'S', '2017--', '00:00', 200, 1001),
+('C', 'S', '2017--', '00:00', 200, 1001),
+('C', 'S', '2017--', '00:00', 200, 1001),
+('C', 'S', '2017--', '00:00', 200, 1001);
 
 INSERT INTO SERVICEINSTANCE(CUSTOMERID, SERVICETECHID, "DATE", SERVICECODE, MECHANICID)VALUES
 ('C000', 'S029', '2017-03-12', 123,'M015' ),
