@@ -158,6 +158,18 @@ INSERT INTO MECHANIC (EMPLOYEEID) VALUES
 ('M019'),
 ('M020');
 
+INSERT INTO SKILL (EMPLOYEEID, TITLEOFSKILL)
+('change tires'),
+('electrical'),
+('oil change'),
+('suspension'),
+('oil filter change'),
+('wheel alignment'),
+('tire pressure'),
+('engine check'),
+('brakes repair'),
+('diagnosis');
+
 INSERT INTO MASTERYLEVEL (EMPLOYEEID,TITLEOFSKILL, "LEVEL") VALUES
 ('M011', 'change tires', 1),
 ('M011', 'electrical', 1),
@@ -212,27 +224,26 @@ INSERT INTO ZIP(ZIPNUMBER, CITY, "STATE")
 ('93101', 'Santa Barbara', 'CA'),
 ('92651', 'Laguna Beach', 'CA');
 
--------CHANGE PRICE ACCORDING TO SERVICE PACKAGE---------
 INSERT INTO SERVICEPACKAGE(PACKAGECODE, PACKAGECOST)
-('2K5H2', 200),
-('UGGZZ', 200),
-('ATZV3', 200),
-('YXZEY', 200),
-('KTZ0P', 200),
-('BW3ON', 200),
-('QG6B7', 200),
-('OSGWG', 200),
-('QHNNU', 200),
-('2U61E', 200),
-('III35', 200),
-('87T7T', 200),
-('QARZL', 200),
-('K6R32', 200),
-('KYMEV', 200),
-('5FSXX', 200),
-('4ZKBG', 200),
-('BJA16', 200),
-('VTNRE', 200);
+(001, 200),
+(002, 300),
+(003, 400),
+(004, 500),
+(005, 200),
+(006, 300),
+(007, 400),
+(009, 500),
+(010, 200),
+(011, 300),
+(012, 400),
+(013, 500),
+(014, 200),
+(015, 300),
+(016, 400),
+(017, 500),
+(017, 200),
+(018, 100),
+(019, 100);
 
 INSERT INTO SERVICEINSTANCE(CUSTOMERID, SERVICETECHID, "DATE", SERVICECODE, MECHANICID)VALUES
 ('C000', 'S029', '2017-03-12', 123,'M015' ),
@@ -250,3 +261,15 @@ INSERT INTO APPOINTMENT(personID, vin, "DATE", "TIME") VALUES
 ('C003', '', '2017-05-18', '11:00'),
 ('C005', '', '2017-06-03', '16:00'),
 ('C006', '', '2017-06-17', '13:00');
+
+INSERT INTO TABLE MENTORSHIP (MENTORID, MENTEEID, TITLEOFSKILL,"START", "END") VALUES
+('M020','M012' ,'oil change', '2015-01-13', '2015-02-13'), 
+('M020','M019' ,'engine check', '2015-02-26', '2015-03-26'), 
+('M020','M016' ,'change tires', '2017-04-26', NULL), --current, still ongoing.
+('M020','M019' ,'engine check', '2015-02-26', '2013-03-26'), 
+('M020','M016' ,'suspension', '2017-01-15', '2017-02-15'), 
+('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
+('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
+('M020','M014', 'suspension', '2016-07-03', '2016-08-03');
+
+
