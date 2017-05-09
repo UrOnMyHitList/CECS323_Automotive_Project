@@ -47,17 +47,17 @@ INSERT INTO PERSON( PERSONID, FIRSTNAME,  LASTNAME, EMAIL,  PHONENUMBER) VALUES
 
 
 --------UPDATE TOTAL SPENT--------
-INSERT INTO CUSTOMER( CUSTOMERID, CUSTOMERTYPE, REFERREDBY, EMAIL, CUSTOMERLEVEL, TOTALSPENT) VALUES
-('C000', 'individual', 'C001', 'catherinebeck@gmail.com', 'premier', 1200),
-('C001', 'individual', 'C002', 'jameserikson@gmail.com', 'premier', 1000),
-('C002', 'individual', 'C003', 'josephinetran@gmail.com', 'premier', 1100),
-('C003', 'individual', 'C004', 'wilmaallison@gmail.com', 'steady', 200),
-('C004', 'individual', 'C005',  'martarose@gmail.com', 'steady', 200),
-('C005', 'corporation', 'C006', 'kararoy@gmail.com', 'steady', 200),
-('C006', 'corporation', 'C007','neilkelly@gmail.com', 'steady', 200),
-('C007', 'corporation', 'C008', 'terrygibbs@gmail.com', 'prospective', 200),
-('C008', 'corporation', 'C009', 'rudydennis@gmail.com', 'prospective', 200),
-('C009', 'corporation', 'C010', 'leroyadams@gmail.com', 'prospective', 200);
+INSERT INTO CUSTOMER( CUSTOMERID, CUSTOMERTYPE, REFERREDBY, CUSTOMERLEVEL, TOTALSPENT) VALUES
+('C000', 'individual', 'C001', 'premier', 1200),
+('C001', 'individual', 'C002', 'premier', 1000),
+('C002', 'individual', 'C003',  'premier', 1100),
+('C003', 'individual', 'C004',  'steady', 200),
+('C004', 'individual', 'C005',  'steady', 200),
+('C005', 'corporation', 'C006', 'steady', 200),
+('C006', 'corporation', 'C007', 'steady', 200),
+('C007', 'corporation', 'C008',  'prospective', 200),
+('C008', 'corporation', 'C009',  'prospective', 200),
+('C009', 'corporation', 'C010',  'prospective', 200);
 
 INSERT INTO STEADY (CUSTOMERID, LOYALTYPOINTS, ANNUALTOTAL ) VALUES
 ('C003', '50', '500'),
