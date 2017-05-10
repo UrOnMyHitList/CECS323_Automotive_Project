@@ -7,7 +7,6 @@
  * Author:  Elena
  * Created: May 7, 2017
  */
-
 INSERT INTO PERSON( PERSONID, FIRSTNAME,  LASTNAME, EMAIL,  PHONENUMBER) VALUES
 ---CUSTOMERS----
 ('C000', 'Catherine', 'Beck', 'catherinebeck@gmail.com', '202-555-0124'),
@@ -31,7 +30,7 @@ INSERT INTO PERSON( PERSONID, FIRSTNAME,  LASTNAME, EMAIL,  PHONENUMBER) VALUES
 ('M017', 'Steven', 'Figueroa', 'stevenfigueroa@gmail.com', '775-555-0170' ),
 ('M018', 'Scott', 'Sandoval', 'scottsandoval@gmail.com','775-555-0139'),
 ('M019','Mark', 'Horton', 'markhorton@gmail.com', '775-555-0129'),
-('M020', 'Otis', 'Jimenez', 'otisjimenez@gmail.com', '775-555-0195');
+('M020', 'Otis', 'Jimenez', 'otisjimenez@gmail.com', '775-555-0195'),
 
 ---EMPLOYEES: SERVICETECH----
 ('S021', 'Theo', 'Miles', 'theomiles@gmail.com', '717-555-0149'),
@@ -60,21 +59,34 @@ INSERT INTO CUSTOMER( CUSTOMERID, CUSTOMERTYPE, REFERREDBY, CUSTOMERLEVEL, TOTAL
 ('C009', 'corporation', 'C010',  'prospective', 200);
 
 INSERT INTO STEADY (CUSTOMERID, LOYALTYPOINTS, ANNUALTOTAL ) VALUES
-('C003', '50', '500'),
-('C004', '20', '1000'),
-('C005', '30', '500'),
-('C006', '40', '600');
+('C003', '50', 500),
+('C004', '20', 1000),
+('C005', '30', 500),
+('C006', '40', 600);
 
-
+--------NOT COMPLETED---------
 INSERT INTO PREMIER (CUSTOMERID, MONTHLYFEE,  BONUS ) VALUES
-('C000', 200, 0),
-('C001', 200, 1), 
-('C002', 200, 1);
+('C000', 200, ''),
+('C001', 200, ''), 
+('C002', 200, '');
 
 INSERT INTO PROSPECTIVE (CUSTOMERID, CONTACTATTEMPTS) VALUES
 ('C007', 2), 
 ('C008', 1),
 ('C009', 3);
+
+INSERT INTO VIN(VIN,MAKE, MODEL, "year") VALUES
+( '133DSS132456ASDFG', 'ALFA ROMEO','Giulietta', 1999),
+( '789FGH132456QWERT', 'AUDI','A3',2018),
+( '741ASD987665ASDFG', 'BMW', 'X1', 1972),
+( '963NJI951753PLOKH', 'CITROEN UK LTD','Grand C4 Picasso', 1984),
+( '456ASD986532SSSSD', 'FORD','Kuga', 1955),
+( '987POO123132CCCFT', 'HONDA','Jazz', 1982),
+( '794CCC454578SSSSS','MITSUBISHI','Outlander', 1985),
+( '988BHU465987CJCJC','SKODA','Yeti Outdoor', 2002),
+( '845CCC828288ALOLA','SsangYong Motor UK Ltd','Korando', 2011),
+( '929MAR10200CCKART','SUZUKI','Vitara', 2000);
+
 
 INSERT INTO VEHICLE(CUSTOMERID, VIN, ESTIMATEDMILEAGE, MILEAGEINTERVAL, ACCIDENT) VALUES
 ('C000', '133DSS132456ASDFG', 91010, 4000, FALSE),
@@ -88,38 +100,59 @@ INSERT INTO VEHICLE(CUSTOMERID, VIN, ESTIMATEDMILEAGE, MILEAGEINTERVAL, ACCIDENT
 ('C008', '845CCC828288ALOLA', 68208, 23000, FALSE),
 ('C009', '929MAR10200CCKART', 34462, 12000, FALSE);
 
+INSERT INTO SERVICEPACKAGE(PACKAGECODE, PACKAGECOST) VALUES
+(1001, 200),
+(1002, 300),
+(1003, 400),
+(1004, 500),
+(1005, 200),
+(1006, 300),
+(1007, 400),
+(1008, 200),
+(1009, 500),
+(1010, 200),
+(1011, 300),
+(1012, 400),
+(1013, 500),
+(1014, 200),
+(1015, 300),
+(1016, 400),
+(1017, 500),
+(1018, 100),
+(1019, 100);
+
 INSERT INTO SERVICEINTERVAL(MAKE, MODEL, PACKAGECODE, MILEAGE)VALUES
 ( 'ALFA ROMEO','Giulietta',1001, 10000 ),
 ( 'ALFA ROMEO','Giulietta',1002, 20000 ),
 ( 'ALFA ROMEO','Giulietta',1003, 30000 ),
-( 'AUDI','A3',1001,5000),
-( 'AUDI','A3',1001,10000),
-( 'BMW', 'X1',1002, 5000),
-( 'BMW', 'X1',1003, 1000),
-( 'BMW', 'X1',1004, 20000),
-( 'BMW', 'X1',1005, 30000),
-( 'BMW', 'X1',1006, 60000),
-( 'BMW', 'X1',1004, 120000),
-( 'CITROEN UK LTD','Grand C4 Picasso',1001, 15000),
-( 'CITROEN UK LTD','Grand C4 Picasso',1002, 30000),
-( 'CITROEN UK LTD','Grand C4 Picasso',1003, 50000),
-( 'FORD','Kuga',1002, 7000),
-( 'FORD','Kuga',1003, 15000),
-( 'FORD','Kuga',1004, 25000),
-( 'FORD','Kuga',1005, 50000),
-( 'HONDA','Jazz',1001, 10000),
-( 'HONDA','Jazz',1002, 25000),
-( 'HONDA','Jazz',1003, 40000),
-( 'MITSUBISHI','Outlander',1002, 30000),
-( 'MITSUBISHI','Outlander',1002, 60000),
-( 'MITSUBISHI','Outlander',1003, 120000),
-( 'SKODA','Yeti Outdoor',1004, 13000),
-( 'SsangYong Motor UK Ltd','Korando',1005, 10000),
-( 'SsangYong Motor UK Ltd','Korando',1004, 20000),
-( 'SsangYong Motor UK Ltd','Korando',1003, 30000),
-( 'SsangYong Motor UK Ltd','Korando',1002, 40000),
-( 'SUZUKI','Vitara',1005, 10000),
-( 'SUZUKI','Vitara',1002, 35000);
+( 'AUDI','A3',1004,5000),
+( 'AUDI','A3',1005,10000),
+( 'BMW', 'X1',1006, 5000),
+( 'BMW', 'X1',1007, 1000),
+( 'BMW', 'X1',1008, 20000),
+( 'BMW', 'X1',1009, 30000),
+( 'BMW', 'X1',1010, 60000),
+( 'BMW', 'X1',1011, 120000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1012, 15000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1013, 30000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1014, 50000),
+( 'FORD','Kuga',1015, 7000),
+( 'FORD','Kuga',1016, 15000),
+( 'FORD','Kuga',1017, 25000),
+( 'FORD','Kuga',1018, 50000),
+( 'HONDA','Jazz',1019, 10000),
+( 'HONDA','Jazz',1001, 25000),
+( 'HONDA','Jazz',1002, 40000),
+( 'MITSUBISHI','Outlander',1003, 30000),
+( 'MITSUBISHI','Outlander',1004, 60000),
+( 'MITSUBISHI','Outlander',1005, 120000),
+( 'SKODA','Yeti Outdoor',1006, 13000),
+( 'SsangYong Motor UK Ltd','Korando',1007, 10000),
+( 'SsangYong Motor UK Ltd','Korando',1008, 20000),
+( 'SsangYong Motor UK Ltd','Korando',1009, 30000),
+( 'SsangYong Motor UK Ltd','Korando',1010, 40000),
+( 'SUZUKI','Vitara',1011, 10000),
+( 'SUZUKI','Vitara',1012, 35000);
 
 INSERT INTO EMPLOYEE(employeeID, title, salary) VALUES
 ----MECHANIC----
@@ -132,7 +165,7 @@ INSERT INTO EMPLOYEE(employeeID, title, salary) VALUES
 ('M017', 'MECHANIC', 38997),
 ('M018', 'MECHANIC', 33882),
 ('M019', 'MECHANIC', 33775),
-('M020', 'MECHANIC', 45000);
+('M020', 'MECHANIC', 45000),
 
 ----SERVICETECH----
 ('S021', 'SERVICETECH', 29876),
@@ -158,7 +191,7 @@ INSERT INTO MECHANIC (EMPLOYEEID) VALUES
 ('M019'),
 ('M020');
 
-INSERT INTO SKILL (EMPLOYEEID, TITLEOFSKILL) VALUES
+INSERT INTO SKILL (TITLEOFSKILL) VALUES
 ('change tires'),
 ('electrical'),
 ('oil change'),
@@ -176,7 +209,7 @@ INSERT INTO MASTERYLEVEL (EMPLOYEEID,TITLEOFSKILL, "LEVEL") VALUES
 ('M012', 'oil change', 1),
 ('M012', 'diagnosis', 2),
 ('M012', 'electrical', 2),
-('M013', 'brake service', 2),
+('M013', 'brakes repair', 2),
 ('M013', 'diagnosis', 2),
 ('M014', 'oil filter change', 2),
 ('M014', 'suspension', 1),
@@ -190,7 +223,7 @@ INSERT INTO MASTERYLEVEL (EMPLOYEEID,TITLEOFSKILL, "LEVEL") VALUES
 ('M018', 'tire pressure', 1),
 ('M019', 'engine check', 2),
 ('M020', 'suspension', 3),
-('M020', 'change tires', 3)
+('M020', 'change tires', 3),
 ('M020', 'wheel alignment',3),
 ('M020', 'engine check', 3),
 ('M020', 'oil change', 3);
@@ -208,47 +241,27 @@ INSERT INTO SERVICETECH (EMPLOYEEID) VALUES
 ('S030');
 
 INSERT INTO ZIP(ZIPNUMBER, CITY, "STATE") VALUES
-('90274', 'Redondo Beach', 'CA'), 
-('90275', 'Rancho Palos Verdes', 'CA'),
-('90280', 'South Gate', 'CA'),
-('90293', 'Playa Del Rey', 'CA'),
-('90294', 'Venice', 'CA'),
-('90401', 'Santa Monica', 'CA'),
-('90501', 'Torrance', 'CA'),
-('90801', 'Long Beach', 'CA'),
-('92037', 'La Jolla', 'CA'),
-('92658', 'Newport Beach', 'CA'),
-('92673', 'San Clemente', 'CA'),
-('92863', 'Orange', 'CA'),
-('92879', 'Corona', 'CA'),
-('93101', 'Santa Barbara', 'CA'),
-('92651', 'Laguna Beach', 'CA');
+(90274, 'Redondo Beach', 'CA'), 
+(90275, 'Rancho Palos Verdes', 'CA'),
+(90280, 'South Gate', 'CA'),
+(90293, 'Playa Del Rey', 'CA'),
+(90294, 'Venice', 'CA'),
+(90401, 'Santa Monica', 'CA'),
+(90501, 'Torrance', 'CA'),
+(90801, 'Long Beach', 'CA'),
+(92037, 'La Jolla', 'CA'),
+(92658, 'Newport Beach', 'CA'),
+(92673, 'San Clemente', 'CA'),
+(92863, 'Orange', 'CA'),
+(92879, 'Corona', 'CA'),
+(93101, 'Santa Barbara', 'CA'),
+(92651, 'Laguna Beach', 'CA');
 
-INSERT INTO SERVICEPACKAGE(PACKAGECODE, PACKAGECOST) VALUES
-(1001, 200),
-(1002, 300),
-(1003, 400),
-(1004, 500),
-(1005, 200),
-(1006, 300),
-(1007, 400),
-(1009, 500),
-(1010, 200),
-(1011, 300),
-(1012, 400),
-(1013, 500),
-(1014, 200),
-(1015, 300),
-(1016, 400),
-(1017, 500),
-(1017, 200),
-(1018, 100),
-(1019, 100);
 
-INSERT INTO APPOINTMENT(personID, vin, "DATE", "TIME") VALUES
-('C003', '', '2017-05-18', '11:00'),
-('C005', '', '2017-06-03', '16:00'),
-('C006', '', '2017-06-17', '13:00');
+INSERT INTO APPOINTMENT(STEADYCUSTOMERID, vin, "DATE", "TIME") VALUES
+('C004', '456ASD986532SSSSD', '2017-05-18', '11:00'),
+('C005', '987POO123132CCCFT', '2017-06-03', '16:00'),
+('C006', '794CCC454578SSSSS', '2017-06-17', '13:00');
 
 INSERT INTO SERVICEVISIT(customerID, employeeID, "DATE", "TIME", totalCost, packageCode) VALUES
 ('C', 'S', '2017--', '00:00', 200, 1001),
@@ -277,21 +290,8 @@ INSERT INTO MENTORSHIP (MENTORID, MENTEEID, TITLEOFSKILL,"START", "END") VALUES
 ('M020','M019' ,'engine check', '2015-02-26', '2015-03-26'), 
 ('M020','M016' ,'change tires', '2017-04-26', NULL), --current, still ongoing.
 ('M020','M019' ,'engine check', '2015-02-26', '2013-03-26'), 
-('M020','M016' ,'suspension', '2017-01-15', '2017-02-15'), 
+('M020','M016' ,'suspension', '2017-01-15', '2017-02-15'),
 ('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
 ('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
 ('M020','M014', 'suspension', '2016-07-03', '2016-08-03');
-
-INSERT INTO VIN(VIN,MAKE, MODEL, YEAR) VALUES
-( '133DSS132456ASDFG', 'ALFA ROMEO','Giulietta', 1999),
-( '789FGH132456QWERT', 'AUDI','A3',2018),
-( '741ASD987665ASDFG', 'BMW', 'X1', 1972)
-( '963NJI951753PLOKH', 'CITROEN UK LTD','Grand C4 Picasso', 1984),
-( '456ASD986532SSSSD', 'FORD','Kuga', 1955),
-( '987POO123132CCCFT', 'HONDA','Jazz', 1982),
-( '794CCC454578SSSSS','MITSUBISHI','Outlander', 1985),
-( '988BHU465987CJCJC','SKODA','Yeti Outdoor', 2002),
-( '845CCC828288ALOLA','SsangYong Motor UK Ltd','Korando', 2011),
-( '929MAR10200CCKART','SUZUKI','Vitara', 2000);
-
 
