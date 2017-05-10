@@ -17,7 +17,7 @@ FROM PERSON INNER JOIN CUSTOMER ON PERSON.personID=CUSTOMER.customerID;
 
 -- 2. Customer_addresses_v – for each customer, indicate whether they are an individual or a 
 --    corporate account, and display all of the addresses that we are managing for that customer.
-CREATE OR REPLACE VIEW Customer_addresses_v AS
+CREATE VIEW Customer_addresses_v AS
 SELECT personID, customerType, address, city, "STATE", zip, addressType 
 FROM CUSTOMER 
 INNER JOIN PERSON ON CUSTOMER.customerID=PERSON.personID
