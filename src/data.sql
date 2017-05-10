@@ -89,37 +89,37 @@ INSERT INTO VEHICLE(CUSTOMERID, VIN, ESTIMATEDMILEAGE, MILEAGEINTERVAL, ACCIDENT
 ('C009', '929MAR10200CCKART', 34462, 12000, FALSE);
 
 INSERT INTO SERVICEINTERVAL(MAKE, MODEL, PACKAGECODE, MILEAGE)VALUES
-( 'ALFA ROMEO','Giulietta','P001', 10000 ),
-( 'ALFA ROMEO','Giulietta','P002', 20000 ),
-( 'ALFA ROMEO','Giulietta','P003', 30000 ),
-( 'AUDI','A3','P001',5000),
-( 'AUDI','A3','P001',10000),
-( 'BMW', 'X1','P002', 5000),
-( 'BMW', 'X1','P003', 1000),
-( 'BMW', 'X1','P004', 20000),
-( 'BMW', 'X1','P005', 30000),
-( 'BMW', 'X1','P006', 60000),
-( 'BMW', 'X1','P004', 120000),
-( 'CITROEN UK LTD','Grand C4 Picasso','P001', 15000),
-( 'CITROEN UK LTD','Grand C4 Picasso','P002', 30000),
-( 'CITROEN UK LTD','Grand C4 Picasso','P003', 50000),
-( 'FORD','Kuga','P002', 7000),
-( 'FORD','Kuga','P003', 15000),
-( 'FORD','Kuga','P004', 25000),
-( 'FORD','Kuga','P005', 50000),
-( 'HONDA','Jazz','P001', 10000),
-( 'HONDA','Jazz','P002', 25000),
-( 'HONDA','Jazz','P003', 40000),
-( 'MITSUBISHI','Outlander','P002', 30000),
-( 'MITSUBISHI','Outlander','P002', 60000),
-( 'MITSUBISHI','Outlander','P003', 120000),
-( 'SKODA','Yeti Outdoor','P004', 13000),
-( 'SsangYong Motor UK Ltd','Korando','P005', 10000),
-( 'SsangYong Motor UK Ltd','Korando','P004', 20000),
-( 'SsangYong Motor UK Ltd','Korando','P003', 30000),
-( 'SsangYong Motor UK Ltd','Korando','P002', 40000),
-( 'SUZUKI','Vitara','P005', 10000),
-( 'SUZUKI','Vitara','P002', 35000);
+( 'ALFA ROMEO','Giulietta',1001, 10000 ),
+( 'ALFA ROMEO','Giulietta',1002, 20000 ),
+( 'ALFA ROMEO','Giulietta',1003, 30000 ),
+( 'AUDI','A3',1001,5000),
+( 'AUDI','A3',1001,10000),
+( 'BMW', 'X1',1002, 5000),
+( 'BMW', 'X1',1003, 1000),
+( 'BMW', 'X1',1004, 20000),
+( 'BMW', 'X1',1005, 30000),
+( 'BMW', 'X1',1006, 60000),
+( 'BMW', 'X1',1004, 120000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1001, 15000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1002, 30000),
+( 'CITROEN UK LTD','Grand C4 Picasso',1003, 50000),
+( 'FORD','Kuga',1002, 7000),
+( 'FORD','Kuga',1003, 15000),
+( 'FORD','Kuga',1004, 25000),
+( 'FORD','Kuga',1005, 50000),
+( 'HONDA','Jazz',1001, 10000),
+( 'HONDA','Jazz',1002, 25000),
+( 'HONDA','Jazz',1003, 40000),
+( 'MITSUBISHI','Outlander',1002, 30000),
+( 'MITSUBISHI','Outlander',1002, 60000),
+( 'MITSUBISHI','Outlander',1003, 120000),
+( 'SKODA','Yeti Outdoor',1004, 13000),
+( 'SsangYong Motor UK Ltd','Korando',1005, 10000),
+( 'SsangYong Motor UK Ltd','Korando',1004, 20000),
+( 'SsangYong Motor UK Ltd','Korando',1003, 30000),
+( 'SsangYong Motor UK Ltd','Korando',1002, 40000),
+( 'SUZUKI','Vitara',1005, 10000),
+( 'SUZUKI','Vitara',1002, 35000);
 
 INSERT INTO EMPLOYEE(employeeID, title, salary) VALUES
 ----MECHANIC----
@@ -272,7 +272,7 @@ INSERT INTO SERVICEINSTANCE(CUSTOMERID, SERVICETECHID, "DATE", SERVICECODE, MECH
 
 
 
-INSERT INTO TABLE MENTORSHIP (MENTORID, MENTEEID, TITLEOFSKILL,"START", "END") VALUES
+INSERT INTO MENTORSHIP (MENTORID, MENTEEID, TITLEOFSKILL,"START", "END") VALUES
 ('M020','M012' ,'oil change', '2015-01-13', '2015-02-13'), 
 ('M020','M019' ,'engine check', '2015-02-26', '2015-03-26'), 
 ('M020','M016' ,'change tires', '2017-04-26', NULL), --current, still ongoing.
@@ -281,5 +281,17 @@ INSERT INTO TABLE MENTORSHIP (MENTORID, MENTEEID, TITLEOFSKILL,"START", "END") V
 ('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
 ('M017', 'M016', 'wheel alignment', '2016-05-22', '2016-06-22'),
 ('M020','M014', 'suspension', '2016-07-03', '2016-08-03');
+
+NSERT INTO VIN(VIN,MAKE, MODEL, YEAR) VALUES
+( '133DSS132456ASDFG', 'ALFA ROMEO','Giulietta', 1999),
+( '789FGH132456QWERT', 'AUDI','A3',2018),
+( '741ASD987665ASDFG', 'BMW', 'X1', 1972)
+( '963NJI951753PLOKH', 'CITROEN UK LTD','Grand C4 Picasso', 1984),
+( '456ASD986532SSSSD', 'FORD','Kuga', 1955),
+( '987POO123132CCCFT', 'HONDA','Jazz', 1982),
+( '794CCC454578SSSSS','MITSUBISHI',Outlander, 1985),
+( '988BHU465987CJCJC','SKODA','Yeti Outdoor', 2002),
+( '845CCC828288ALOLA','SsangYong Motor UK Ltd','Korando', 2011),
+( '929MAR10200CCKART','SUZUKI','Vitara', 2000);
 
 
