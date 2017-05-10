@@ -263,6 +263,7 @@ INSERT INTO APPOINTMENT(STEADYCUSTOMERID, vin, "DATE", "TIME") VALUES
 ('C005', '987POO123132CCCFT', '2017-06-03', '16:00'),
 ('C006', '794CCC454578SSSSS', '2017-06-17', '13:00');
 
+--------------NOT COMPLETED--------------------
 INSERT INTO SERVICEVISIT(customerID, employeeID, "DATE", "TIME", totalCost, packageCode) VALUES
 ('C', 'S', '2017--', '00:00', 200, 1001),
 ('C', 'S', '2017--', '00:00', 200, 1001),
