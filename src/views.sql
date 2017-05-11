@@ -39,7 +39,7 @@ INNER JOIN (PERSON INNER JOIN MENTORSHIP ON PERSON.PERSONID=MENTORSHIP.MENTEEID)
 -- 4. Premier_profits_v – On a year by year basis, show the premier customer’s outlay versus what 
 --    they would have been charged for the services which they received had they merely been steady customers.
 CREATE OR REPLACE VIEW Premier_profits_v AS
-SELECT
+SELECT 
 
 
 -- 5. Prospective_resurrection_v – List all of the prospective customers who have had three or more 
@@ -49,6 +49,4 @@ CREATE OR REPLACE VIEW Prospective_ressurection_v AS
 SELECT PERSONID, FIRSTNAME, LASTNAME, EMAIL
 FROM PERSON INNER JOIN CUSTOMER ON PERSON.PERSONID=CUSTOMER.CUSTOMERID
 INNER JOIN PROSPECTIVE USING (CUSTOMERID)
-WHERE CONTACTATTEMPTS >= 3 AND ;
-
-YEAR(GetDate())
+WHERE CONTACTATTEMPTS >=3 AND LASTCONTACTED < (NOW() - INTERVAL 1 YEAR);
