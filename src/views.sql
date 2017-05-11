@@ -11,14 +11,15 @@
 -- 1. Customer_v – for each customer, indicate his or her name as well as the customer type 
 --    (prospect, steady or premier) as well as the number of years that customer has been with us.
 CREATE OR REPLACE VIEW Customer_v AS
-SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (2017 - YEARJOINED)
-FROM PERSON INNER JOIN CUSTOMER ON PERSON.personID=CUSTOMER.customerID;
+SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (2017 - YEARJOINED) AS "YEARS"
+FROM PERSON INNER JOIN CUSTOMER ON PERSON.PERSONID=CUSTOMER.CUSTOMERID;
 
+--FUCK THESE FUCKERS AND THEY'RE BULLSHIT
 
 -- 2. Customer_addresses_v – for each customer, indicate whether they are an individual or a 
 --    corporate account, and display all of the addresses that we are managing for that customer.
 CREATE VIEW Customer_addresses_v AS
-SELECT PERSONID, CUSTOMERTYPE, ADDRESS, CITY, STATECODE, ZIP, ADDRESSTYPE
+SELECT PERSONID, CUSTOMERTYPE, ADDRESS, CITY, ZSTATE, ZIP, ADDRESSTYPE
 FROM CUSTOMER 
 INNER JOIN PERSON ON CUSTOMER.CUSTOMERID=PERSON.PERSONID
 NATURAL JOIN ADDRESS
