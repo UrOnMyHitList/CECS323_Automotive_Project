@@ -14,7 +14,6 @@ CREATE OR REPLACE VIEW Customer_v AS
 SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (2017 - YEARJOINED) AS "YEARS"
 FROM PERSON INNER JOIN CUSTOMER ON PERSON.PERSONID=CUSTOMER.CUSTOMERID;
 
---FUCK THESE FUCKERS AND THEY'RE BULLSHIT
 
 -- 2. Customer_addresses_v – for each customer, indicate whether they are an individual or a 
 --    corporate account, and display all of the addresses that we are managing for that customer.
@@ -39,7 +38,12 @@ INNER JOIN (PERSON INNER JOIN MENTORSHIP ON PERSON.PERSONID=MENTORSHIP.MENTEEID)
 -- 4. Premier_profits_v – On a year by year basis, show the premier customer’s outlay versus what 
 --    they would have been charged for the services which they received had they merely been steady customers.
 CREATE OR REPLACE VIEW Premier_profits_v AS
-SELECT 
+SELECT CUSTOMERID, ((2017-(SELECT YEARJOINED FROM CUSTOMER WHERE PREMIER.CUSTOMERID = CUSTOMER.CUSTOMERID))*12)*MONTHLYFEE AS MONTHLYFEE,
+(SELECT SUM(TOTALCOST) FROM SERVICEVISIT SV WHERE SV.CUSTOMERID = PREMIER.CUSTOMERID) AS SERVICEVISITCOST,
+(((2017-(SELECT YEARJOINED FROM CUSTOMER WHERE PREMIER.CUSTOMERID = CUSTOMER.CUSTOMERID))*12)*MONTHLYFEE
+ - (SELECT SUM(TOTALCOST) FROM SERVICEVISIT SV WHERE SV.CUSTOMERID = PREMIER.CUSTOMERID)) AS DIFFERENCE
+FROM PREMIER
+ORDER BY DIFFERENCE DESC; 
 
 
 -- 5. Prospective_resurrection_v – List all of the prospective customers who have had three or more 
