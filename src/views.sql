@@ -30,9 +30,9 @@ ORDER BY PERSONID, ADDRESSTYPE;
 -- 3. Mechanic_mentor_v – reports all of the mentor/mentee relationships at Dave’s, sorted by the 
 --    name of the mentor, then the name of the mentee.
 CREATE OR REPLACE VIEW Mechanic_mentor_v AS
-SELECT mentor.firstName, mentor.lastName, mentee.firstName, mentee.lastName, titleOfSkill
-FROM (PERSON INNER JOIN MENTORSHIP ON PERSON.personID=MENTORSHIP=mentorID) AS mentor
-INNER JOIN (PERSON INNER JOIN MENTORSHIP ON PERSON.personID=MENTORSHIP.menteeID) AS mentee) USING (mentorID);
+SELECT MENTOR.FIRSTNAME, MENTOR.LASTNAME, MENTEE.FIRSTNAME, MENTEE.LASTNAME, TITLEOFSKILL
+FROM (PERSON INNER JOIN MENTORSHIP ON PERSON.PERSONID=MENTORSHIP=MENTORID) AS MENTOR
+INNER JOIN (PERSON INNER JOIN MENTORSHIP ON PERSON.PERSONID=MENTORSHIP.MENTEEID) AS MENTEE) USING (MENTORID);
 
 
 -- 4. Premier_profits_v – On a year by year basis, show the premier customer’s outlay versus what 
