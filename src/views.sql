@@ -11,7 +11,7 @@
 -- 1. Customer_v – for each customer, indicate his or her name as well as the customer type 
 --    (prospect, steady or premier) as well as the number of years that customer has been with us.
 CREATE OR REPLACE VIEW Customer_v AS
-SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (2017 - YEARJOINED) AS "YEARS"
+SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (YEAR(NOW()) - YEARJOINED) AS "YEARS"
 FROM PERSON INNER JOIN CUSTOMER ON PERSON.PERSONID=CUSTOMER.CUSTOMERID;
 
 
