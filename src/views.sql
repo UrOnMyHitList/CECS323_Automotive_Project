@@ -11,20 +11,20 @@
 -- 1. Customer_v – for each customer, indicate his or her name as well as the customer type 
 --    (prospect, steady or premier) as well as the number of years that customer has been with us.
 CREATE OR REPLACE VIEW Customer_v AS
-SELECT personID, firstName, lastName, customerType, ((SELECT (YEAR(GETDATE())) - yearJoined)
+SELECT PERSONID, FIRSTNAME, LASTNAME, CUSTOMERTYPE, (2017 - YEARJOINED)
 FROM PERSON INNER JOIN CUSTOMER ON PERSON.personID=CUSTOMER.customerID;
 
 
 -- 2. Customer_addresses_v – for each customer, indicate whether they are an individual or a 
 --    corporate account, and display all of the addresses that we are managing for that customer.
 CREATE VIEW Customer_addresses_v AS
-SELECT personID, customerType, address, city, "STATE", zip, addressType 
+SELECT PERSONID, CUSTOMERTYPE, ADDRESS, CITY, STATECODE, ZIP, ADDRESSTYPE
 FROM CUSTOMER 
-INNER JOIN PERSON ON CUSTOMER.customerID=PERSON.personID
+INNER JOIN PERSON ON CUSTOMER.CUSTOMERID=PERSON.PERSONID
 NATURAL JOIN ADDRESS
-INNER JOIN ZIP ON ADDRESS.zip=ZIP.zipnumber
-GROUP BY (personID)
-ORDER BY personID, addressType;
+INNER JOIN ZIP ON ADDRESS.ZIP=ZIP.ZIPNUMBER
+GROUP BY (PERSONID)
+ORDER BY PERSONID, ADDRESSTYPE;
 
 
 -- 3. Mechanic_mentor_v – reports all of the mentor/mentee relationships at Dave’s, sorted by the 
