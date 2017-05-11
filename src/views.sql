@@ -46,4 +46,9 @@ SELECT
 --    contacts, and for whom the most recent contact was more than a year ago.  They might be ripe 
 --    for another attempt.
 CREATE OR REPLACE VIEW Prospective_ressurection_v AS
-SELECT
+SELECT PERSONID, FIRSTNAME, LASTNAME, EMAIL
+FROM PERSON INNER JOIN CUSTOMER ON PERSON.PERSONID=CUSTOMER.CUSTOMERID
+INNER JOIN PROSPECTIVE USING (CUSTOMERID)
+WHERE CONTACTATTEMPTS >= 3 AND ;
+
+YEAR(GetDate())
